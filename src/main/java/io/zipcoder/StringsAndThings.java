@@ -1,6 +1,9 @@
 package io.zipcoder;
 
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author tariq
  */
@@ -15,7 +18,14 @@ public class StringsAndThings {
      *           countYZ("day fyyyz"); // Should return 2
      */
     public Integer countYZ(String input){
-        return null;
+        int total = 0;
+        String[] split = input.split(" ");
+        for (String i : split){
+            if(i.endsWith("y") || i.endsWith("z")){
+                total++;
+            }
+        }
+        return total;
     }
 
     /**
@@ -28,7 +38,8 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+        String result = base.replace(remove,"");
+        return result;
     }
 
     /**
@@ -50,8 +61,15 @@ public class StringsAndThings {
      *           gHappy("xxgxx") // Should return  false
      *           gHappy("xxggyygxx") // Should return  false
      */
-    public Boolean gIsHappy(String input){
-        return null;
+    public Boolean gIsHappy(String input) {
+        for (int i = 1; i < input.length(); i++) {
+            if(input.charAt(i) == 'g') {
+                if (input.charAt(i) == input.charAt(i - 1)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 
